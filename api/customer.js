@@ -97,26 +97,22 @@ router.get("/customer", async (req, res) => {
             .catch(err => console.log(err))
     })
             
-//             app.post("/registerUser",(req,res) => {
-//   const reg=regFn.registerCustomer(req.body);
-//   Register.find({email:req.body.email},function(err,result){
-//     if(err)
-//     console.log("error");
-//     else if(result.length!==0)
-//     {
-//       res.statusMessage = "found";
-//       res.status(200).end();
-//       console.log(result);
-//     }
-//     else{
-//       res.statusMessage = "Not found";
-//       res.status(400).end();
-      
-//     }
-      
-//   });
-  
-    
-// });
+router.post("/registerUser",(req,res) => {
+    const reg=regFn.registerCustomer(req.body);
+    Register.find({email:req.body.email},function(err,result){
+    if(err)
+        console.log("error");
+    else if(result.length!==0)
+    {
+        res.statusMessage = "found";
+        res.status(200).end();
+        console.log(result);
+    }
+    else{
+        res.statusMessage = "Not found";
+        res.status(400).end(); 
+    } 
+  });
+});
   
 module.exports = router;
