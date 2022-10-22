@@ -1,8 +1,6 @@
 // login page (register schema)
 const mongoose= require("mongoose");
-require('dotenv').config();
-
-mongoose.connect(process.env.MONGO_URI,{
+mongoose.connect("mongodb+srv://yousfa:Amazon123@cluster0.nfqggsr.mongodb.net/storeDB?retryWrites=true&w=majority",{
  
 })
 const registerSchema=new mongoose.Schema({
