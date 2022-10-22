@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 var regFn = require("./registerCustomer")
 var Register = require('./customerSchema');
+const stripe= require("stripe")(process.env.stripkey);
 
 /**
  * GET product list.

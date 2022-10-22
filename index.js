@@ -1,9 +1,15 @@
 const express = require("express");
+const cors = require("cors");
+const bodyParser=require("body-parser");
 require('dotenv').config();
 
 const app = express();
+app.use(cors({
+    origin:'https://shoppingcart-beta.vercel.app',
+}));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const customer = require("./api/customer");
-const stripe= require("stripe")(process.env.stripkey);
 
 app.use(express.json({ extended: false }));
 
