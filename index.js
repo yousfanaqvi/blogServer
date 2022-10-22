@@ -1,8 +1,9 @@
 const express = require("express");
+require('dotenv').config();
+
 const app = express();
 const customer = require("./api/customer");
 const stripe= require("stripe")(process.env.stripkey);
-require('dotenv').config();
 
 app.use(express.json({ extended: false }));
 
