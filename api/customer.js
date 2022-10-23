@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 var regFn = require("./registerCustomer")
 var Register = require('./customerSchema');
-const stripe= require("stripe")(process.env.stripkey);
+const stripe= require("stripe")("sk_test_51LNl64ATz3reXnQSKoL85Aqi3zp48lmLS1NGB0XSdVYBFf1eeLcGDnb0xlBK2Jq5YfkXrppmA8CHqPdpJlfzEp6S00CLVjlxhd");
 
 /**
  * GET product list.
@@ -67,7 +67,7 @@ router.get("/customer", async (req, res) => {
           
     });
         
-    router.post("/payment" ,  (req,res) => {
+router.post("/payment" ,  (req,res) => {
             const {product,token}=req.body;
             console.log("product", product);
             console.log("price", product.price);
@@ -96,7 +96,7 @@ router.get("/customer", async (req, res) => {
                 res.status(200).json(result);        
               })
             .catch(err => console.log(err))
-    })
+})
             
 router.post("/registerUser",(req,res) => {
     const reg=regFn.registerCustomer(req.body);
