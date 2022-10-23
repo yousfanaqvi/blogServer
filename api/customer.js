@@ -38,8 +38,8 @@ router.get("/customer", async (req, res) => {
   });
 
   router.get("/getdata", (req, res) => {
-    // console.log(req.query.email);
-    Register.findOne({email:req.body.email},function(err,result){
+     console.log(req.query.email);
+    Register.findOne({email:req.query.email},function(err,result){
           if(err)
         console.log("error");
         else if(result)
