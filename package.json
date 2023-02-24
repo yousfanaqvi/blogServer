@@ -1,23 +1,33 @@
 {
-  "name": "server",
+  "name": "Verccel",
   "version": "1.0.0",
-  "description": "Deploy express server to vercel.",
+  "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
-    "mongoose": "^6.6.7",
-    "stripe": "^10.15.0"
+    "express-async-handler": "^1.2.0",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node": "^19.3.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2",
+    "path": "^0.12.7"
   }
 }
