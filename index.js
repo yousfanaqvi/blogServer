@@ -11,12 +11,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "*", // allow to server to accept request from different origin
-  methods: ['GET','POST','DELETE'],
-  credentials: true, // allow session cookie from browser to pass through
-  "Access-Control-Allow-Credentials": true
-
+  origin:'https://blog-6uviut0if-yousfanaqvi.vercel.app',
 }));
+// app.use(cors({
+//   origin: "*", // allow to server to accept request from different origin
+//   methods: ['GET','POST','DELETE'],
+//   credentials: true, // allow session cookie from browser to pass through
+//   "Access-Control-Allow-Credentials": true
+
+// }));
 
 app.use(cookieParser('keyboard cat'));
 app.use(session({
