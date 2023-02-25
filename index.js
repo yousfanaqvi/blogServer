@@ -16,7 +16,7 @@ app.use(cors({
 
 app.use(cookieParser('keyboard cat'));
 app.use(session({
-  secret: prpcess.env.SECRET,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie : { httpOnly: true, secure : false}
