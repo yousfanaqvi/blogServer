@@ -12,9 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin:'https://blog-gayl03f5r-yousfanaqvi.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization','Access-Control-Allow-Headers'],
-  credentials: true
+ 
 }));
 // app.get('/', (req, res) => {
 //   res.setHeader('Access-Control-Allow-Origin', '*'); // allow requests from all domains
