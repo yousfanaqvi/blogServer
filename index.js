@@ -12,8 +12,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin:'https://blog-gayl03f5r-yousfanaqvi.vercel.app',
-}));
+  allowedHeaders: ['*']
 
+}));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 app.use(cookieParser('keyboard cat'));
 app.use(session({
   secret: process.env.SECRET,
@@ -27,17 +32,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const user = require("./api/user");
 app.use(express.json({ extended: false }));
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'https://blog-gayl03f5r-yousfanaqvi.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-  });
+
 app.use("/", user);
+// app.get('/example', (req, res) => {
+//   // Set the Access-Control-Allow-Origin header to allow all domains to access the resource
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   res.send('This is an example response');
+// });
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Server Running on port ${port}`));
 
 module.exports = app;
