@@ -171,7 +171,7 @@ router.delete("/deleteAccount",function(req,res){
         else if (!result)
             res.send("user not found")
         else
-            res.send("success");
+            res.send({code:200});
         
         })
 });
