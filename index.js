@@ -11,7 +11,7 @@ const bodyParser=require("body-parser");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin:'https://blog-jx7t74jwx-yousfanaqvi.vercel.app/',
+  origin:'https://blog-36mg871ew-yousfanaqvi.vercel.app',
  
 }));
 // app.get('/', (req, res) => {
