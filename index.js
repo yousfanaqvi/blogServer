@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin:'https://blog-ocus4e2aa-yousfanaqvi.vercel.app',
+  origin:'https://blog-gayl03f5r-yousfanaqvi.vercel.app',
 }));
 
 app.use(cookieParser('keyboard cat'));
