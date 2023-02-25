@@ -14,10 +14,10 @@ app.use(cors({
   origin:'https://blog-gayl03f5r-yousfanaqvi.vercel.app',
 
 }));
-app.get('/', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*'); // allow requests from all domains
-  res.send('Hello, world!');
-});
+// app.get('/', (req, res) => {
+//   res.setHeader('Access-Control-Allow-Origin', '*'); // allow requests from all domains
+//   res.send('Hello, world!');
+// });
 // app.use((req, res, next) => {
 //   res.setHeader('Access-Control-Allow-Origin', '*');
 //   next();
@@ -36,7 +36,9 @@ const user = require("./api/user");
 app.use(express.json({ extended: false }));
 
 
-app.use("/", user);
+app.use("/", user, (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); // allow requests from all domains
+});
 // app.get('/example', (req, res) => {
 //   // Set the Access-Control-Allow-Origin header to allow all domains to access the resource
 //   res.setHeader('Access-Control-Allow-Origin', '*');
