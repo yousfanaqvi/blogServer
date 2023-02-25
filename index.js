@@ -36,9 +36,7 @@ const user = require("./api/user");
 app.use(express.json({ extended: false }));
 
 
-app.use("/", user, (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*'); // allow requests from all domains
-});
+app.use("/", user);
 // app.get('/example', (req, res) => {
 //   // Set the Access-Control-Allow-Origin header to allow all domains to access the resource
 //   res.setHeader('Access-Control-Allow-Origin', '*');

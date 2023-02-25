@@ -17,6 +17,17 @@ const upload = multer({ storage: storage })
 passport.serializeUser(Register.serializeUser());
 passport.deserializeUser(Register.deserializeUser());
 
+const setHeaders = (req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+  };
+  
+  // Use the middleware function with the router
+  router.use('/', setHeaders);
+  
+  // Define a route handler for the root path
+ 
+
 router.post("/login", passport.authenticate("local",{
     failureRedirect: "/loginerror"}), 
     function(req, res){
