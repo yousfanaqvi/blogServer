@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 require('dotenv').config();
 const bodyParser=require("body-parser");
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
@@ -24,8 +24,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json({ extended: false }));
 const user = require("./api/user");
+app.use(express.json({ extended: false }));
 app.use("/", user);
 
 
