@@ -11,7 +11,7 @@ const console = require("console");
 const LocalStrategy = require('passport-local').Strategy; 
 
 passport.use(new LocalStrategy(Register.authenticate()));
-var upload = multer({ dest: 'uploads/' });
+var upload = multer({ dest: 'tmp/uploads/' });
 passport.serializeUser(Register.serializeUser());
 passport.deserializeUser(Register.deserializeUser());
 
