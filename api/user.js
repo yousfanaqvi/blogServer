@@ -53,7 +53,7 @@ router.post("/registerUser",upload.single('image'),(req,res) => {
             username:req.body.username,
             question:req.body.Question,
             answer:req.body.answer,
-            img:fs.readFileSync(path.join(__dirname, "../uploads/" + req.file.filename))
+            img:req.file.buffer
         })
             ,req.body.password, function(err, user) {
         if (err) {
@@ -156,7 +156,9 @@ router.post('/editPicture', upload.single('image'),function(req, res)
     {
         Register.findOneAndUpdate({"_id":req.user.id},
         {$set:{
-           "img":fs.readFileSync(path.join(__dirname, "../uploads/" + req.file.filename))
+        //    "img":fs.readFileSync(path.join(__dirname, "../uploads/" + req.file.filename))
+        "img":req.file.buffer
+
         }}, function (err, user) {
     
         if (err) {
